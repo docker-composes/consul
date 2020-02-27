@@ -1,0 +1,18 @@
+version: '2'
+
+services:
+  consul-singleton:
+    image: consul:1.6.2
+    container_name: consul-singleton
+    ports:
+      - 8500:8500
+    environment:
+      - CONSUL_BIND_INTERFACE=eth0
+    volumes:
+      - ./data:/data
+    networks:
+      - docker-net
+
+networks:
+  docker-net:
+    external: true
