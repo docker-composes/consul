@@ -6,11 +6,12 @@ services:
     container_name: consul-singleton
     ports:
       - 8500:8500
-      - 8600:8600
+      - 8600:8600/udp
     environment:
       - CONSUL_BIND_INTERFACE=eth0
     volumes:
-      - ./data:/data
+      - ./data:/consul/data
+      - ./config:/consul/config
     networks:
       - docker-net
 
