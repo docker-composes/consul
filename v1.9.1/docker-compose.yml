@@ -1,9 +1,9 @@
 version: '2'
 
 services:
-  consul-singleton:
+  consul-1.9.1:
     image: consul:1.9.1
-    container_name: consul-singleton
+    container_name: consul-1.9.1
     command: consul  agent -server -data-dir=/consul/data  -node=agent-one -bind=0.0.0.0 -bootstrap-expect=1 -client=0.0.0.0 -ui
     ports:
       - 8500:8500
